@@ -79,8 +79,7 @@
       font-weight: bold;
     }
 
-    .contact {
-      text-align: center;
+    .contact-form {
       background-color: #eaf4ff;
       border: 2px dashed #1b8ceb;
       border-radius: 10px;
@@ -88,16 +87,34 @@
       margin-top: 30px;
     }
 
-    .contact p {
-      font-size: 20px;
-      margin-bottom: 10px;
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
 
-    .contact a {
-      font-size: 22px;
-      color: #0a2c54;
-      text-decoration: none;
-      font-weight: 600;
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      padding: 12px;
+      font-size: 18px;
+      background-color: #1b8ceb;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #0a2c54;
     }
 
     footer {
@@ -158,9 +175,15 @@
     </ul>
   </section>
 
-  <section class="contact" id="kontakt">
-    <p>Masz pytania? Napisz do nas:</p>
-    <a href="mailto:webito.pl@gmail.com">webito.pl@gmail.com</a>
+  <section class="contact-form" id="kontakt">
+    <h2>Skontaktuj się z nami</h2>
+    <form action="https://formspree.io/f/xovdndqb" method="POST">
+      <input type="text" name="name" placeholder="Twoje imię" required>
+      <input type="email" name="email" placeholder="Twój email" required>
+      <textarea name="message" rows="5" placeholder="Wiadomość" required></textarea>
+      <input type="hidden" name="_redirect" value="https://twojadomena.pl/dziekujemy.html" />
+      <button type="submit">Wyślij wiadomość</button>
+    </form>
   </section>
 
   <footer>
