@@ -1,62 +1,139 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Webito - Nowoczesne strony i sklepy internetowe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
+      background-color: #f4f6f8;
       color: #222;
     }
-    header {
-      background-color: #0a2c54;
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                  url('https://images.unsplash.com/photo-1522202222206-1f452f8e1e85?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
       color: white;
-      padding: 20px;
       text-align: center;
+      padding: 100px 20px;
     }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+    .hero a {
+      background-color: #1b8ceb;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .hero a:hover {
+      background-color: #0a2c54;
+    }
+
     section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-      background-color: white;
-      margin-top: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      background: white;
+      padding: 40px 30px;
+      margin: 30px auto;
+      max-width: 1000px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      animation: fadeIn 1s ease;
     }
-    h1, h2 {
+
+    h2 {
       color: #0a2c54;
+      margin-bottom: 20px;
+      font-size: 28px;
     }
+
     ul {
       list-style: none;
       padding: 0;
     }
-    li::before {
-      content: "\2713";
-      color: #1b8ceb;
-      padding-right: 8px;
+
+    li {
+      margin-bottom: 15px;
+      padding-left: 28px;
+      position: relative;
     }
+
+    li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #1b8ceb;
+      font-weight: bold;
+    }
+
     .contact {
       text-align: center;
+      background-color: #eaf4ff;
+      border: 2px dashed #1b8ceb;
+      border-radius: 10px;
+      padding: 30px;
       margin-top: 30px;
-      font-size: 18px;
     }
+
+    .contact p {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .contact a {
+      font-size: 22px;
+      color: #0a2c54;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
       font-size: 14px;
-      color: #777;
+      color: #888;
+      margin-top: 40px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      .hero a {
+        padding: 12px 20px;
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
+
+  <div class="hero">
     <h1>Webito</h1>
-    <p>Nowoczesne strony i sklepy internetowe dla firm</p>
-  </header>
+    <p>Tworzymy strony i sklepy internetowe dla firm, które chcą więcej</p>
+    <a href="#kontakt">Zamów teraz</a>
+  </div>
 
   <section>
     <h2>Co oferujemy?</h2>
@@ -81,12 +158,14 @@
     </ul>
   </section>
 
-  <section class="contact">
-    <p>Masz pytania? Napisz do nas:<br><strong>webito.pl@gmail.com</strong></p>
+  <section class="contact" id="kontakt">
+    <p>Masz pytania? Napisz do nas:</p>
+    <a href="mailto:webito.pl@gmail.com">webito.pl@gmail.com</a>
   </section>
 
   <footer>
     &copy; 2025 Webito – Profesjonalne strony internetowe dla biznesu
   </footer>
+
 </body>
 </html>
